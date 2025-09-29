@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Neumorphism Utilities */
+.neu-card {
+  background: linear-gradient(145deg, #ffffff, #f0f0f3);
+  box-shadow: 
+    20px 20px 40px #d1d9e6,
+    -20px -20px 40px #ffffff,
+    inset 0px 0px 0px #d1d9e6,
+    inset 0px 0px 0px #ffffff;
+}
+
+.neu-inset {
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow: 
+    inset 8px 8px 16px #d1d9e6,
+    inset -8px -8px 16px #ffffff;
+}
+
+.neu-button {
+  background: linear-gradient(145deg, #ffffff, #f0f0f3);
+  box-shadow: 
+    8px 8px 16px #d1d9e6,
+    -8px -8px 16px #ffffff;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.neu-button:hover {
+  box-shadow: 
+    12px 12px 24px #d1d9e6,
+    -12px -12px 24px #ffffff;
+  transform: translateY(-2px);
+}
+
+.neu-button:active,
+.neu-button-active {
+  box-shadow: 
+    inset 6px 6px 12px #d1d9e6,
+    inset -6px -6px 12px #ffffff;
+  transform: translateY(0px);
+}
+
+.neu-button-primary {
+  background: linear-gradient(145deg, #667eea, #764ba2);
+  box-shadow: 
+    8px 8px 16px rgba(102, 126, 234, 0.4),
+    -8px -8px 16px rgba(118, 75, 162, 0.4);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.neu-button-primary:hover {
+  box-shadow: 
+    12px 12px 24px rgba(102, 126, 234, 0.5),
+    -12px -12px 24px rgba(118, 75, 162, 0.5);
+  transform: translateY(-2px);
+}
+
+.neu-circle {
+  background: linear-gradient(145deg, #ffffff, #f0f0f3);
+  box-shadow: 
+    6px 6px 12px #d1d9e6,
+    -6px -6px 12px #ffffff;
+  border-radius: 50%;
+}
+
+.neu-input {
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow: 
+    inset 6px 6px 12px #d1d9e6,
+    inset -6px -6px 12px #ffffff;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.neu-input:focus {
+  box-shadow: 
+    inset 8px 8px 16px #d1d9e6,
+    inset -8px -8px 16px #ffffff,
+    0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(145deg, #d1d9e6, #ffffff);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(145deg, #c1c9d6, #f0f0f3);
+}
+
+/* Animation classes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .neu-card {
+    box-shadow: 
+      12px 12px 24px #d1d9e6,
+      -12px -12px 24px #ffffff;
+  }
+  
+  .neu-button {
+    box-shadow: 
+      6px 6px 12px #d1d9e6,
+      -6px -6px 12px #ffffff;
+  }
+}
+
+/* Dark mode support (if needed) */
+@media (prefers-color-scheme: dark) {
+  .dark .neu-card {
+    background: linear-gradient(145deg, #2d3748, #1a202c);
+    box-shadow: 
+      20px 20px 40px #0d1117,
+      -20px -20px 40px #4a5568;
+  }
+  
+  .dark .neu-inset {
+    background: linear-gradient(145deg, #1a202c, #2d3748);
+    box-shadow: 
+      inset 8px 8px 16px #0d1117,
+      inset -8px -8px 16px #4a5568;
+  }
+}
